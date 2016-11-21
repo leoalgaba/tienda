@@ -1,0 +1,15 @@
+extends layout
+
+block content
+		h3 listado general {{2+2}}
+		h4 {{prueba}}
+		ul(ng-repeat="p in productos")
+			li nombre {{p.nombre}} {{2+2}}
+			li precio {{p.precio}}
+			li categoria {{p.categoria}}
+			li descripcion {{p.descripcion}}
+			li foto {{p.foto}}
+
+	a(href='/') Volver a inicio
+
+
