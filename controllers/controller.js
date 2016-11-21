@@ -5,11 +5,11 @@ const Modelo = require('../models/modelo');
 
 // *** LISTADO GENERAL ***
 function getProductos(req,res) {
-	Modelo.find ((err,productos) =>{
+	Modelo.find({}, (err,productos) =>{
 		if(err) return res.status(500).send({message:`Error al realizar la peticion: ${err}`})
 		if (!productos) return res.status(404).send({message: 'No existen os'})
 
-		res.status(200).json({productos})
+		res.status(200).send({productos})
 	})
 }
 // *** AÑADIR UN PRODUCTO ***
