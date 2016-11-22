@@ -7,6 +7,13 @@ const tiendaCtrl = require('../controllers/controller')
 // *** INSTANCIAMOS ROUTER DE EXPRESS ***
 const api = express.Router()
 
+api.get('/', (req,res) =>{
+	res.render('index')
+})
+api.get('/listado', (req,res) =>{
+	res.render('listado')
+})
+
 // REST FULL METODO GET,POST,PUT,DELETE
 api.get('/producto', tiendaCtrl.getProductos) // listado todo los productos
 api.post('/producto', tiendaCtrl.saveProducto) // añadir un producto
